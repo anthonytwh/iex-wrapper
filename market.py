@@ -11,8 +11,7 @@ __version__ = 0.1
 
 import requests
 
-
-class Market(IEX_v1):
+class Market():
 	def __init__(self):
 		pass
 

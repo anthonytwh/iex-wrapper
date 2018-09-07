@@ -11,8 +11,16 @@ __version__ = 0.1
 
 import requests
 
-class Stocks(IEX_v1):
-	def __init__(self):
+from .iexbase import _IEXv1
+
+_IEXv1("help")
+
+class Stocks(_IEXv1):
+	def __init__(self, symbol, method, params, **kwargs):
+		print ('made it to stock.py')
+		print (symbol, method, params, **kwargs)
+
+		self._request("yolo")
 		pass
 
 	def run_query(self):
