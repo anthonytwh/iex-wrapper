@@ -2,7 +2,6 @@
 
 IEX Exchange API Wrapper
 
-Github: anthonytwh
 
 """
 
