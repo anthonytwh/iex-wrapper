@@ -17,6 +17,76 @@ from .tops import Tops
 
 
 def stock(symbol, method, params=None, **kwargs):
+	"""
+	Stock Endpoints of IEX Exchange API
+
+	Available Endpoints:
+	-------------------
+		'book':
+		------
+
+		'chart':
+		-------
+
+		'company':
+		---------
+
+		'delayed-quote':
+		---------------
+
+		'dividends':
+		-----------
+
+		'earnings':
+		----------
+
+		'effective-spread':
+		------------------
+
+		'financials':
+		------------
+
+		'largest-trades':
+		----------------
+
+		'logo':
+		------
+
+		'news':
+		------
+
+		'ohlc':
+		------
+
+		'peers':
+		-------
+
+		'previous':
+		----------
+		
+		'price':
+		-------
+
+		'quote':
+		-------
+
+		'relevant':
+		----------
+
+		'splits':
+		--------
+
+		'stats':
+		-------
+
+		'time-series':
+		-------------
+		
+		'volume-by-venue':
+		-----------------
+
+
+	"""
 
 	_methods = ['book', 'chart', 'company', 
 				'delayed-quote', 'dividends', 'earnings', 
