@@ -4,17 +4,16 @@ IEX Exchange API Wrapper
 
 
 """
-
-__author__ = 'anthonytwh'
-__version__ = 0.1
-
 import requests
+
 from .iexbase import _IEXv1
 
 '''
 TODO:
 
 - handle list input
+
+- deal with kwargs
 
 - check query
 
@@ -52,15 +51,21 @@ class Stocks(_IEXv1):
 
 	"""
 	def __init__(self, symbol, method, params, **kwargs):
-		self.type = 'stock'
 		self.symbol = symbol
 		self.method = method
-		if params == None:
-			self._query_noparams(symbol, method, **kwargs)
-		else:
-			self.params = params
-			self._query_params(symbol, method, params, **kwargs)
+		self.params = params
+		self._check_params(**kwargs)
 		self._run_query(self.query)
+
+	def _check_params(self, **kwargs):
+		if self.params == None:
+			self._query_noparams(self.symbol, self.method, **kwargs)
+		if not (self.method == None or '') and not(self.params == None):
+			self._query_params(self.symbol, self.method, self.params, **kwargs)
+
+	@property
+	def type(self):
+		return str('stock')
 
 	def _query_noparams(self, symbol, method, **kwargs):
 		self.query = '{u}/{t}/{s}/{m}'.format(
@@ -79,4 +84,10 @@ class Stocks(_IEXv1):
 
 	def _run_query(self, query):
 		self.output = requests.get(query).json()
+
+	def _run_batch(self): # Batch query of multiple stocks
+		pass
+
+
+
 		
