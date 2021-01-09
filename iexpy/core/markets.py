@@ -1,14 +1,9 @@
-"""
-
-IEX Exchange API Wrapper
-
-
-"""
 import requests
 
-from .iexbase import _IEXv1
+from iexpy.iex import _IEX_Cloud
 
-class Market(_IEXv1):
+## WIP ##
+class Market(_IEX_Cloud):
 	def __init__(self, method, params, **kwargs):
 		self.method = method
 		self.params = params

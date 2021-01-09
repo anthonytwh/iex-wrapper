@@ -1,12 +1,6 @@
 """
-
-IEX Exchange API Wrapper
-
-By: anthonytwh
+Light-weight API Wrapper for IEX Cloud
 
 """
 
-__author__ = 'anthonytwh'
-__version__ = 0.1
-
-from .api import stock, market, refdata, stats, deep, tops
+from iexpy.api import stock, market, refdata, stats, deep, tops

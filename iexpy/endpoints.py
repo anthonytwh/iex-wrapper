@@ -1,4 +1,9 @@
-{
+'''
+Mapping of IEX endpoints.
+ 
+'''
+
+core_data = {
     "stock": [
         "advanced-stats",
         "recommendation-trends",
